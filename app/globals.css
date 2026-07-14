@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #221a1d;
+  --ink-soft: #52424a;
+  --paper: #fbf6f0;
+  --gold: #c9973f;
+  --gold-soft: #e3c076;
+  --blush: #d9a8a0;
+  --sage: #7c8f6e;
+  --line: rgba(251, 246, 240, 0.16);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-blush: var(--blush);
+  --color-sage: var(--sage);
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-work-sans);
+  --font-mono: var(--font-plex-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.frame-label {
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.sprocket-rail {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--gold-soft) 0 4px,
+    transparent 4px 18px
+  );
+  width: 2px;
+}
